@@ -59,10 +59,6 @@ int main() {
     // Seed the random number generator
     srand(time(NULL));
 
-
-    // Print the flag for debugging or testing (optional)
-    // printf("Flag: %s\n", flag);
-
     // Print message asking for username
     printf("Before we start, type your username:\n username=");
 
@@ -81,7 +77,7 @@ int main() {
     scanf("%d", &user_value);
 
     // Generate a random value as the correct answer
-    int random_value = rand() % 0xFFFFFFFF;  // Random number between 1 and 10
+    int random_value = rand() % 0xFFFFFFFF;  // Random number between 1 and 0xFFFFFFFF
 
     // Print the result
     if (user_value == random_value) {
