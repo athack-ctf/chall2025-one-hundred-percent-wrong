@@ -1,10 +1,7 @@
-The description of your challenge as seen by participants in CTFd. Try to make it feel within the theme
-of the event...
+Meet "100% Wrong", the ultimate self-esteem destroyer. This sadistic bot was designed by Jester to make you fail. 
+It asks impossible questions, ensures your answers are incorrect, and follows up with personalized reminders that 
+you are always wrong.
 
----
-If your challenge is a multi-flag one (i.e., it consists of a sequence of sub-challenges each rewarded with
-its own flag), requiring a different description for each sub-challenge, then have your descriptions split as 
-done with this paragraph, and the next one.
-
----
-Obviously, for each sub-challenge, you should provide its flag value in [solution/FLAGS.md](solution/FLAGS.md).
+The bot consists of a command-line binary that has a hardcoded flag. A flagless clone of the binary is provided for you 
+to inspect offline. However, to interact with the real bot (that has the flag), you should connect to it remotely 
+(over a TCP socket server).
