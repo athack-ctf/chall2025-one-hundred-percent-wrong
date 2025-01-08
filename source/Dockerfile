@@ -1,33 +1,26 @@
-#########################################################################################################################
-# TODO: REPLACE THE CONTENT OF THIS FILE WITH YOUR OWN.
-#########################################################################################################################
+FROM ubuntu:latest
 
-# Use the official Python base image
-FROM python:3.10-slim
+# Install required packages: socat and bash
+RUN apt-get update && apt-get install -y \
+    socat \
+    bash \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory
-WORKDIR /chall
+# Create user "chall" and set the home directory
+RUN useradd -m -d /home/chall chall
 
-# Installing Flask
-RUN pip install Flask
+# Copy all content from the local ./chall directory to /home/chall in the container
+COPY ./chall /home/chall
 
-# Create the example chall (chall.py)
-RUN echo "from flask import Flask\n\
-chall = Flask(__name__)\n\
-\n\
-@chall.route('/')\n\
-def hello():\n\
-    return 'Hello @Hack 2025!'\n\
-\n\
-if __name__ == '__main__':\n\
-    chall.run(host='0.0.0.0')" > chall.py
+# Set the correct ownership for the copied content
+RUN chown -R chall:chall /home/chall
 
-# Set environment vars
-ENV FLASK_APP=chall.py
-ENV FLASK_RUN_PORT=2025
+# Set the working directory to /home/chall
+WORKDIR /home/chall
 
-# Expose the port that the chall will run on
+# Expose port 2025
 EXPOSE 2025
 
-# Run the chall
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Run socat_server.sh with user "chall"
+USER chall
+CMD ["bash", "socat_server.sh"]

@@ -2,9 +2,15 @@
 
 **NOTE**: You shouldn't need to rebuild the binaries, unless you want to introduce some changes.
 
-## Run using `docker compose`
+## Using `docker compose`
 
-TODO
+```
+# Run container
+docker compose up --build
+
+# Test connection (replace 127.25.0.2 with the container's ip)
+nc 172.25.0.2 2025
+```
 
 ## Building binaries
 
