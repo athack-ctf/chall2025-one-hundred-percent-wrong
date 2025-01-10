@@ -14,7 +14,7 @@ nc 172.25.0.2 2025
 
 ## Building binaries
 
-Below instructions will build 2 binaries: `` (for ) and `one-hundred-percent-wrong-using-dummy-flag` (to be distributed
+Below instructions will build 2 binaries: `one-hundred-percent-wrong` (for the binary running on the server, and containing the real flag) and `one-hundred-percent-wrong-using-dummy-flag` (to be distributed
 as an offline artifact).
 
 ```
