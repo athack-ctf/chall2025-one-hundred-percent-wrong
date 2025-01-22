@@ -8,8 +8,8 @@
 # Run container
 docker compose up --build
 
-# Test connection (replace 127.25.0.2 with the container's ip)
-nc 172.25.0.2 2025
+# Test connection (if running remotely, replace 127.0.0.1 with the container's ip)
+nc 127.0.0.1 2025
 ```
 
 ## Building binaries
