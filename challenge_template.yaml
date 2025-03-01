@@ -1,0 +1,41 @@
+# Name should be "Challenge name" if only one flag, or
+# "Challenge name - 1", "Challenge name - 2", etc. if multiple ones.
+# Be careful of the spaces before and after the '-'
+name: "100% Wrong"
+author: ""
+category: <Pwn>
+description: |
+    Meet "100% Wrong", the ultimate self-esteem destroyer. This sadistic bot was designed by Jester to make you fail. 
+    It asks impossible questions, ensures your answers are incorrect, and follows up with personalized reminders that 
+    you are always wrong.
+
+    The bot consists of a command-line binary that has a hardcoded flag. A flagless clone of the binary is provided for you 
+    to inspect offline. However, to interact with the real bot (that has the flag), you should connect to it remotely 
+    (over a TCP socket).
+
+    [Start your challenge instance](https://instancer.athackctf.com/chall2025-one-hundred-percent-wrong/create)
+    
+value: 0
+
+# Let's put the challenges as standard for now and we can script to change
+type: standard
+
+
+# Flags specify answers that your challenge use. You should generally provide at least one.
+flags:
+  - type: "static"
+    content: "ATHACKCTF{f0rm4t_5tring_vulner4bilitie5}"
+    data: "case_insensitive"
+
+
+# Available: beginner, interac
+tags:
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - ./offline-artifacts/one-hundred-percent-wrong-using-dummy-flag
+
+# Put hidden by default
+state: hidden
+
+version: "0.1"
