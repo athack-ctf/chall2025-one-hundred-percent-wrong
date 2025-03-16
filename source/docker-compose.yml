@@ -1,8 +1,7 @@
-version: '3.8'
-
 services:
   one-hundred-percent-wrong:
     build: .
     image: athack-ctf/chall2025-one-hundred-percent-wrong:latest
     ports:
-      - "2025:2025"
+    - 52029:2025
+version: '3.8'
